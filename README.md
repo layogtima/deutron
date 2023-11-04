@@ -40,6 +40,43 @@ Before diving into Deutron's code, we recommend familiarizing yourself with Ardu
 - Adjust and calibrate Deutron’s servos using the provided adjustment functions.
 - Upload the code to your Arduino Nano and watch Deutron come to life!
 
+# Deutron's Movement Functions
+
+Deutron is equipped with a variety of movement functions, allowing for a wide range of interactions and behaviors. These functions are designed to be called with specific parameters to control Deutron's movement speed, direction, and style.
+
+## List of Movement Functions
+
+- `stand()`: Brings Deutron to a standing position from any state.
+- `sit()`: Commands Deutron to move into a sitting position.
+- `turn_left(steps)`: Rotates Deutron to the left for the specified number of 'steps'.
+- `turn_right(steps)`: Rotates Deutron to the right for the specified number of 'steps'.
+- `step_forward(steps)`: Moves Deutron forward for the specified number of 'steps'.
+- `step_back(steps)`: Moves Deutron backward for the specified number of 'steps'.
+- `head_up(amount)`: Raises Deutron's head by the specified 'amount'.
+- `head_down(amount)`: Lowers Deutron's head by the specified 'amount'.
+- `body_left(amount)`: Leans Deutron's body to the left by the specified 'amount'.
+- `body_right(amount)`: Leans Deutron's body to the right by the specified 'amount'.
+- `hand_wave(times)`: Performs a waving gesture with the specified number of 'times'.
+- `hand_shake(times)`: Performs a shaking gesture with the specified number of 'times'.
+- `body_dance(times)`: Makes Deutron perform a dance for the specified number of 'times'.
+
+## Serial Communication Protocol
+
+To communicate with Deutron via serial communication, you need to follow the established protocol. Each command is sent as a string of characters followed by a newline character (`\n`). The general format for a command is as follows:
+
+
+Responses from Deutron will be sent back over the serial connection, confirming the execution of commands or any errors encountered.
+
+## Contribution Guidelines
+
+When contributing to the serial communication feature, please consider the following:
+
+- **Compatibility**: Ensure that any new commands or changes remain compatible with the existing communication protocol.
+- **Documentation**: Any new functions should be well-documented, both in the code and in the repository README.
+- **Testing**: Thoroughly test the functions to ensure they work reliably before submitting a pull request.
+
+We look forward to your innovative ideas and contributions to make Deutron not just a robot, but a true companion!
+
 ## Community & Support
 
 Join our community if you're as excited about desk-side robotics as we are! For support, questions, or a friendly chat with the creators:
