@@ -163,44 +163,7 @@ void loop()
   Serial.println("Stand");
   stand();
   delay(1000);
-  step_forward(2);
-  delay(1000);
-  step_back(2);
-  delay(1000);
-  head_up(20);
-  delay(1000);
-  head_down(20);
-  delay(1000);
-  turn_left(2);
-  delay(1000);
-  turn_right(2);
-  delay(1000);
-  body_left(30);
-  delay(1000);
-  body_right(30);
-  delay(1000);
-  body_right(30);
-  body_left(30);
-  delay(1000);
-  hand_wave(1);
-  delay(1000);
-  hand_wave(2);
-  delay(1000);
-  hand_wave(3);
-  delay(1000);
-  hand_wave(4);
-  delay(1000);
-  hand_shake(1);
-  delay(1000);
-  hand_shake(2);
-  delay(1000);
-  hand_shake(3);
-  delay(1000);
-  hand_shake(4);
-  delay(1000);
-  body_dance(5);
-  
-  
+  step_forward(1);
 }
 
 /*

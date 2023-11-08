@@ -84,6 +84,10 @@ Join our community if you're as excited about desk-side robotics as we are! For 
 - **Join Our Discord**: A place for discussion, sharing ideas, and getting help from fellow members.
 - **Submit Issues**: If you come across any problems, feel free to open an issue in this repository.
 
+## Credits
+
+Built on https://www.instructables.com/DIY-Spider-RobotQuad-robot-Quadruped/ by Dejan Nedelkovski.
+
 ## License
 
 Deutron's code is open-source and is available under the GPL 3.0 License. We believe in the power of open innovation and encourage you to tinker with and build upon our little Quadwalker.
