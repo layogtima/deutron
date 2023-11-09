@@ -82,6 +82,11 @@ const float turn_x0 = turn_x1 - temp_b * cos(temp_alpha);
 const float turn_y0 = temp_b * sin(temp_alpha) - turn_y1 - length_side;
 /* ---------------------------------------------------------------------------*/
 
+/* -------------------------------- serial comm*/
+char serial_input;
+boolean is_new_serial_data = false;
+
+
 /*
   - setup function
    ---------------------------------------------------------------------------*/
@@ -158,12 +163,34 @@ void servo_detach(void)
 /*
   - loop function
    ---------------------------------------------------------------------------*/
+
+void recvOneChar() {
+    if (Serial.available() > 0) {
+        serial_input = Serial.read();
+        is_new_serial_data = true;
+    }
+}
+
+void performAction() {
+  switch(serial_input) {
+    case 'f': step_forward(2); break;
+    case 'b': step_back(2); break;
+    case 'l': turn_left(6); break;
+    case 'r': turn_right(6); break;
+  }
+}
+
+void check_serialin() {
+    if (is_new_serial_data == true) {
+        performAction();
+        is_new_serial_data = false;
+    }
+}
+
 void loop()
 {
-  Serial.println("Stand");
-  stand();
-  delay(1000);
-  step_forward(1);
+    recvOneChar();
+    check_serialin();
 }
 
 /*
