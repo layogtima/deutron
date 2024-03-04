@@ -94,8 +94,8 @@ void setup()
   // Initialize Lights
   strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
   strip.show();            // Turn OFF all pixels ASAP
-  strip.setBrightness(100);
-  colorWipe(strip.Color(0,   255,   0), 25);
+  strip.setBrightness(200);
+  colorWipe(strip.Color(0,   125,   125), 25);
   
   //initialize default parameter
   set_site(0, x_default - x_offset, y_start + y_step, z_boot);
@@ -162,8 +162,32 @@ void loop()
 {
   Serial.println("Stand");
   stand();
+  
+  delay(500);
+  body_left(20);
+  headbob(12);
+  delay(500);
+  body_right(20);
+  headbob(24);
+  delay(500);
+  
+  body_dance(1);
   delay(1000);
-  step_forward(1);
+}
+
+void headbob(unsigned int n) {
+  head_up(n);
+  head_down(n);
+  delay(150);
+  
+  head_up(n * 2);
+  head_down(n * 2);
+  delay(150);
+  
+  head_up(n);
+  head_down(n);
+  delay(150);
+  
 }
 
 /*
